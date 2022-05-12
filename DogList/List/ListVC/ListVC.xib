@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <searchBar contentMode="redraw" placeholder="Search Here" translatesAutoresizingMaskIntoConstraints="NO" id="QmD-0F-zwE">
-                    <rect key="frame" x="0.0" y="50" width="320" height="50"/>
+                    <rect key="frame" x="0.0" y="100" width="320" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="jrJ-fR-YPi"/>
                     </constraints>
@@ -33,10 +34,10 @@
                     </scopeButtonTitles>
                 </searchBar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8f-j5-Sdb">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dogs List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcy-M7-gHI">
-                            <rect key="frame" x="116" y="13" width="88" height="24"/>
+                            <rect key="frame" x="116" y="56" width="88" height="24"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -45,12 +46,12 @@
                     <color key="backgroundColor" red="0.17033180589999999" green="0.4444049001" blue="0.66586869959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="Wcy-M7-gHI" firstAttribute="centerX" secondItem="F8f-j5-Sdb" secondAttribute="centerX" id="QDu-AR-f28"/>
-                        <constraint firstAttribute="height" constant="50" id="hvq-C4-edL"/>
-                        <constraint firstItem="Wcy-M7-gHI" firstAttribute="centerY" secondItem="F8f-j5-Sdb" secondAttribute="centerY" id="ohq-oq-DU5"/>
+                        <constraint firstAttribute="height" constant="100" id="hvq-C4-edL"/>
+                        <constraint firstAttribute="bottom" secondItem="Wcy-M7-gHI" secondAttribute="bottom" constant="20" id="rIl-XA-AIR"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jWX-rc-B9d">
-                    <rect key="frame" x="0.0" y="100" width="320" height="468"/>
+                    <rect key="frame" x="0.0" y="150" width="320" height="418"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="7H7-y8-B1v">
                         <size key="itemSize" width="128" height="128"/>
@@ -64,7 +65,7 @@
                     </connections>
                 </collectionView>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data Found" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zen-xR-lYr">
-                    <rect key="frame" x="16" y="324" width="288" height="20.5"/>
+                    <rect key="frame" x="16" y="349" width="288" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -75,7 +76,6 @@
             <constraints>
                 <constraint firstItem="Zen-xR-lYr" firstAttribute="centerY" secondItem="jWX-rc-B9d" secondAttribute="centerY" id="1Lj-UH-Kfz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jWX-rc-B9d" secondAttribute="bottom" id="4f7-qu-4gs"/>
-                <constraint firstItem="F8f-j5-Sdb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9Rb-vX-Dj1"/>
                 <constraint firstItem="jWX-rc-B9d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="C83-vw-81Q"/>
                 <constraint firstItem="QmD-0F-zwE" firstAttribute="top" secondItem="F8f-j5-Sdb" secondAttribute="bottom" id="GaM-AW-v6W"/>
                 <constraint firstItem="Zen-xR-lYr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Jut-9s-xIH"/>
@@ -87,6 +87,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="F8f-j5-Sdb" secondAttribute="trailing" id="if4-lR-0cA"/>
                 <constraint firstItem="jWX-rc-B9d" firstAttribute="top" secondItem="QmD-0F-zwE" secondAttribute="bottom" id="ihA-VF-sIV"/>
                 <constraint firstItem="Zen-xR-lYr" firstAttribute="centerX" secondItem="jWX-rc-B9d" secondAttribute="centerX" id="vrP-CJ-C7u"/>
+                <constraint firstItem="F8f-j5-Sdb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="xiE-Wy-Nlu"/>
             </constraints>
             <point key="canvasLocation" x="-33.75" y="59.154929577464792"/>
         </view>

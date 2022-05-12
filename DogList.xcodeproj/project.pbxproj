@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,7 +22,11 @@
 		24CF970D26750BAE006E3696 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CF970B26750BAE006E3696 /* DetailsVC.swift */; };
 		24CF971026750BC9006E3696 /* DetailsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CF970F26750BC9006E3696 /* DetailsVC.storyboard */; };
 		24CF971226753212006E3696 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 24CF971126753212006E3696 /* README.md */; };
-		BDC9B537F3FE1421FB443575 /* Pods_DogList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D434C48BF83B235A0A474A0F /* Pods_DogList.framework */; };
+		5D6527C7282CF9240025941B /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5D6527C6282CF9240025941B /* SDWebImageSwiftUI */; };
+		5D6527C9282CF9C10025941B /* ListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6527C8282CF9C10025941B /* ListVM.swift */; };
+		5D6527CB282CFAD00025941B /* ListVC+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6527CA282CFAD00025941B /* ListVC+Delegate.swift */; };
+		5D6527D3282CFBA10025941B /* DogListAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6527D2282CFBA10025941B /* DogListAPITests.swift */; };
+		5D6527DA282D05F80025941B /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6527D9282D05F80025941B /* ListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,13 @@
 			remoteInfo = DogList;
 		};
 		24CF96E62674FC1D006E3696 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24CF96BC2674FC1A006E3696 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24CF96C32674FC1A006E3696;
+			remoteInfo = DogList;
+		};
+		5D6527D4282CFBA10025941B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 24CF96BC2674FC1A006E3696 /* Project object */;
 			proxyType = 1;
@@ -64,9 +75,11 @@
 		24CF970B26750BAE006E3696 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		24CF970F26750BC9006E3696 /* DetailsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsVC.storyboard; sourceTree = "<group>"; };
 		24CF971126753212006E3696 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		69FFFD6EB04A75BC3D4549DA /* Pods-DogList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogList.debug.xcconfig"; path = "Target Support Files/Pods-DogList/Pods-DogList.debug.xcconfig"; sourceTree = "<group>"; };
-		AF602E6A3F5530167489229C /* Pods-DogList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogList.release.xcconfig"; path = "Target Support Files/Pods-DogList/Pods-DogList.release.xcconfig"; sourceTree = "<group>"; };
-		D434C48BF83B235A0A474A0F /* Pods_DogList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D6527C8282CF9C10025941B /* ListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVM.swift; sourceTree = "<group>"; };
+		5D6527CA282CFAD00025941B /* ListVC+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListVC+Delegate.swift"; sourceTree = "<group>"; };
+		5D6527D0282CFBA10025941B /* DogListAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogListAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D6527D2282CFBA10025941B /* DogListAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListAPITests.swift; sourceTree = "<group>"; };
+		5D6527D9282D05F80025941B /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDC9B537F3FE1421FB443575 /* Pods_DogList.framework in Frameworks */,
+				5D6527C7282CF9240025941B /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +105,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5D6527CD282CFBA10025941B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -102,9 +122,8 @@
 				24CF96C62674FC1A006E3696 /* DogList */,
 				24CF96DD2674FC1D006E3696 /* DogListTests */,
 				24CF96E82674FC1D006E3696 /* DogListUITests */,
+				5D6527D1282CFBA10025941B /* DogListAPITests */,
 				24CF96C52674FC1A006E3696 /* Products */,
-				E7B37BCE235C26DEF4EEAAC9 /* Pods */,
-				5774BF71480E374EF76D472B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +133,7 @@
 				24CF96C42674FC1A006E3696 /* DogList.app */,
 				24CF96DA2674FC1D006E3696 /* DogListTests.xctest */,
 				24CF96E52674FC1D006E3696 /* DogListUITests.xctest */,
+				5D6527D0282CFBA10025941B /* DogListAPITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,6 +195,9 @@
 			children = (
 				24CF96F82674FF16006E3696 /* ListVC.xib */,
 				24CF96F72674FF16006E3696 /* ListVC.swift */,
+				5D6527D9282D05F80025941B /* ListModel.swift */,
+				5D6527CA282CFAD00025941B /* ListVC+Delegate.swift */,
+				5D6527C8282CF9C10025941B /* ListVM.swift */,
 			);
 			path = ListVC;
 			sourceTree = "<group>";
@@ -188,21 +211,12 @@
 			path = DetailsVC;
 			sourceTree = "<group>";
 		};
-		5774BF71480E374EF76D472B /* Frameworks */ = {
+		5D6527D1282CFBA10025941B /* DogListAPITests */ = {
 			isa = PBXGroup;
 			children = (
-				D434C48BF83B235A0A474A0F /* Pods_DogList.framework */,
+				5D6527D2282CFBA10025941B /* DogListAPITests.swift */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E7B37BCE235C26DEF4EEAAC9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				69FFFD6EB04A75BC3D4549DA /* Pods-DogList.debug.xcconfig */,
-				AF602E6A3F5530167489229C /* Pods-DogList.release.xcconfig */,
-			);
-			path = Pods;
+			path = DogListAPITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,17 +226,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24CF96EE2674FC1D006E3696 /* Build configuration list for PBXNativeTarget "DogList" */;
 			buildPhases = (
-				DD6D800BEF73A2FE6F89CDA4 /* [CP] Check Pods Manifest.lock */,
 				24CF96C02674FC1A006E3696 /* Sources */,
 				24CF96C12674FC1A006E3696 /* Frameworks */,
 				24CF96C22674FC1A006E3696 /* Resources */,
-				C73092A67BB5C72A1E50CC8D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = DogList;
+			packageProductDependencies = (
+				5D6527C6282CF9240025941B /* SDWebImageSwiftUI */,
+			);
 			productName = DogList;
 			productReference = 24CF96C42674FC1A006E3696 /* DogList.app */;
 			productType = "com.apple.product-type.application";
@@ -263,13 +278,31 @@
 			productReference = 24CF96E52674FC1D006E3696 /* DogListUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		5D6527CF282CFBA10025941B /* DogListAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D6527D6282CFBA10025941B /* Build configuration list for PBXNativeTarget "DogListAPITests" */;
+			buildPhases = (
+				5D6527CC282CFBA10025941B /* Sources */,
+				5D6527CD282CFBA10025941B /* Frameworks */,
+				5D6527CE282CFBA10025941B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D6527D5282CFBA10025941B /* PBXTargetDependency */,
+			);
+			name = DogListAPITests;
+			productName = DogListAPITests;
+			productReference = 5D6527D0282CFBA10025941B /* DogListAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		24CF96BC2674FC1A006E3696 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					24CF96C32674FC1A006E3696 = {
@@ -283,6 +316,10 @@
 						CreatedOnToolsVersion = 12.5;
 						TestTargetID = 24CF96C32674FC1A006E3696;
 					};
+					5D6527CF282CFBA10025941B = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 24CF96C32674FC1A006E3696;
+					};
 				};
 			};
 			buildConfigurationList = 24CF96BF2674FC1A006E3696 /* Build configuration list for PBXProject "DogList" */;
@@ -294,6 +331,10 @@
 				Base,
 			);
 			mainGroup = 24CF96BB2674FC1A006E3696;
+			packageReferences = (
+				5D6527C2282C069E0025941B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				5D6527C5282CF9240025941B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 24CF96C52674FC1A006E3696 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -301,6 +342,7 @@
 				24CF96C32674FC1A006E3696 /* DogList */,
 				24CF96D92674FC1D006E3696 /* DogListTests */,
 				24CF96E42674FC1D006E3696 /* DogListUITests */,
+				5D6527CF282CFBA10025941B /* DogListAPITests */,
 			);
 		};
 /* End PBXProject section */
@@ -333,49 +375,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5D6527CE282CFBA10025941B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		C73092A67BB5C72A1E50CC8D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DogList/Pods-DogList-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DogList/Pods-DogList-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DogList/Pods-DogList-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DD6D800BEF73A2FE6F89CDA4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DogList-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		24CF96C02674FC1A006E3696 /* Sources */ = {
@@ -386,9 +393,12 @@
 				24CF96C82674FC1A006E3696 /* AppDelegate.swift in Sources */,
 				24CF970D26750BAE006E3696 /* DetailsVC.swift in Sources */,
 				242E86FC269CBC20008501A6 /* AppConstants.swift in Sources */,
+				5D6527CB282CFAD00025941B /* ListVC+Delegate.swift in Sources */,
 				24CF96F92674FF16006E3696 /* ListVC.swift in Sources */,
 				24CF97022675054D006E3696 /* AppNetworking.swift in Sources */,
+				5D6527C9282CF9C10025941B /* ListVM.swift in Sources */,
 				24CF96FD26750035006E3696 /* ListCollectionViewCell.swift in Sources */,
+				5D6527DA282D05F80025941B /* ListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +418,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5D6527CC282CFBA10025941B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D6527D3282CFBA10025941B /* DogListAPITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -420,6 +438,11 @@
 			isa = PBXTargetDependency;
 			target = 24CF96C32674FC1A006E3696 /* DogList */;
 			targetProxy = 24CF96E62674FC1D006E3696 /* PBXContainerItemProxy */;
+		};
+		5D6527D5282CFBA10025941B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24CF96C32674FC1A006E3696 /* DogList */;
+			targetProxy = 5D6527D4282CFBA10025941B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -553,13 +576,13 @@
 		};
 		24CF96EF2674FC1D006E3696 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69FFFD6EB04A75BC3D4549DA /* Pods-DogList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GG8XQZVXU3;
+				DEVELOPMENT_TEAM = 22P2M66GHH;
 				INFOPLIST_FILE = DogList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -573,13 +596,13 @@
 		};
 		24CF96F02674FC1D006E3696 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF602E6A3F5530167489229C /* Pods-DogList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GG8XQZVXU3;
+				DEVELOPMENT_TEAM = 22P2M66GHH;
 				INFOPLIST_FILE = DogList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -675,6 +698,44 @@
 			};
 			name = Release;
 		};
+		5D6527D7282CFBA10025941B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.monika.DogListAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DogList.app/DogList";
+			};
+			name = Debug;
+		};
+		5D6527D8282CFBA10025941B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.monika.DogListAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DogList.app/DogList";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -714,7 +775,43 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		5D6527D6282CFBA10025941B /* Build configuration list for PBXNativeTarget "DogListAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D6527D7282CFBA10025941B /* Debug */,
+				5D6527D8282CFBA10025941B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5D6527C2282C069E0025941B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		5D6527C5282CF9240025941B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5D6527C6282CF9240025941B /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D6527C5282CF9240025941B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 24CF96BC2674FC1A006E3696 /* Project object */;
 }

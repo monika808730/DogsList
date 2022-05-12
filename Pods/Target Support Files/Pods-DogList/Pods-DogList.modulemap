@@ -1,6 +1,0 @@
-framework module Pods_DogList {
-  umbrella header "Pods-DogList-umbrella.h"
-
-  export *
-  module * { export * }
-}

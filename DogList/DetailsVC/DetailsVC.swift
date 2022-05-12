@@ -1,6 +1,6 @@
 
 import UIKit
-import SDWebImage
+import SDWebImageSwiftUI
 
 class DetailsVC: UITableViewController
 {
@@ -13,7 +13,7 @@ class DetailsVC: UITableViewController
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var lifeSpanLabel: UILabel!
     
-    var details = JSONDictionary()
+    var details = [DogsListModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,30 +22,13 @@ class DetailsVC: UITableViewController
 
 //    MARK:- SetupUI as per Response
     func setupUI(){
-        titleLabel.text = details["name"] as? String ?? ""
-        temperamentLabel.text = details["temperament"] as? String ?? "N/A"
-        breedForLabel.text = details["bred_for"] as? String ?? "N/A"
-        breedGroupLabel.text = details["breed_group"] as? String ?? "N/A"
-        lifeSpanLabel.text = details["life_span"] as? String ?? "N/A"
-        
-        if let heightDict = details["height"] as? JSONDictionary{
-            let metric = heightDict["metric"] as? String ?? "N/A"
-            let imperial = heightDict["imperial"] as? String ?? "N/A"
-            
-            heightLabel.text = "Metric : \(metric) \nImperial : \(imperial)"
-        }
-        
-        if let weightDict = details["weight"] as? JSONDictionary{
-            let metric = weightDict["metric"] as? String ?? "N/A"
-            let imperial = weightDict["imperial"] as? String ?? "N/A"
-            
-            weightLabel.text = "Metric : \(metric) \nImperial : \(imperial)"
-        }
-        
-        if let imageDict = details["image"] as? JSONDictionary{
-            if let imageURL = imageDict["url"] as? String{
-                imgView.sd_setImage(with:URL(string: imageURL))
-            }
-        }
+        titleLabel.text = details.first?.name ?? ""
+        temperamentLabel.text = details.first?.temperament ?? "N/A"
+        breedForLabel.text = details.first?.bred_for ?? "N/A"
+        breedGroupLabel.text = details.first?.breed_group ?? "N/A"
+        lifeSpanLabel.text = details.first?.life_span ?? "N/A"
+        heightLabel.text = details.first?.height_metric_imperial ?? "N/A"
+        weightLabel.text = details.first?.weight_metric_imperial ?? "N/A"
+        imgView.sd_setImage(with:URL(string: details.first?.imgURL ?? ""))
     }
 }

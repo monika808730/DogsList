@@ -11,13 +11,9 @@ class ListCollectionViewCell: UICollectionViewCell
         super.awakeFromNib()
     }
         
-    func displayResult(result:JSONDictionary){
-        nameLabel.text = result["name"] as? String ?? ""
-        if let imageDict = result["image"] as? JSONDictionary{
-            if let imageURL = imageDict["url"] as? String{
-                imgView.sd_setImage(with:URL(string: imageURL))
-            }
-        }
+    func displayResult(result:DogsListModel){
+        nameLabel.text = result.name
+        imgView.sd_setImage(with:URL(string: result.imgURL))
     }
 
 }

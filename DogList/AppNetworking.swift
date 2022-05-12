@@ -2,55 +2,42 @@ import UIKit
 import SystemConfiguration
 
 
-class AppNetworking
+public class AppNetworking
 {
     static let shared = AppNetworking()
     static let noInternetError = NSError(domain: "NetworkCheck", code: 500, userInfo: ["ErrorDescription":"Check your internet connection."])
+    static let somethingWentWrongError = NSError(domain: "Error", code: 404, userInfo: ["ErrorDescription":"Something went wrong."])
     static var isConnectedToNetwork : Bool {
         return Reachability.shared!.isReachable
     }
+}
+
+// Call API And get response.
+func getAPIReponse(url:String, completion: @escaping (_ data: [JSONDictionary]?, _ error: String?) -> Void) {
     
-    func APICalling(apiUrl:String,
-                    successResp : @escaping success,
-                    failure : @escaping Failure)
-    {
-        let request = NSMutableURLRequest(url: NSURL(string: apiUrl)! as URL,
-                                          cachePolicy: .useProtocolCachePolicy,
-                                          timeoutInterval: 10.0)
-        request.httpMethod = "GET"
-        request.addValue(apiKey, forHTTPHeaderField: "x-api-key")
-        
-        guard AppNetworking.isConnectedToNetwork else {
-            failure(AppNetworking.noInternetError)
-            return
-        }
-        
-        
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-            
-            do{
-                guard let datas = data else {
-                    print(String(describing: error))
-                    return
-                }
-                if let jsonResp = try JSONSerialization.jsonObject(with: datas, options: .allowFragments) as? JSONDictionary{
-                    
-                    successResp([jsonResp])
-                    
-                }else if let jsonResp = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [JSONDictionary]{
-                    
-                    successResp(jsonResp)
-                    
-                }else{
-                    failure(error! as NSError)
-                }
-                
-                
-            }catch{
-            }
-        })
-        
-        dataTask.resume()
+    guard let apiUrl = URL(string: url) else { return }
+    
+    var request = URLRequest(url: apiUrl,timeoutInterval: 100)
+    request.httpMethod = "GET"
+    request.addValue(apiKey, forHTTPHeaderField: "x-api-key")
+
+    guard AppNetworking.isConnectedToNetwork else {
+        completion(nil,AppNetworking.noInternetError.description)
+        return
     }
+    
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        guard let data = data else { return }
+        do {
+            if let json = try JSONSerialization.jsonObject(with: data, options: [.fragmentsAllowed]) as? [JSONDictionary]{
+                completion(json,nil)
+            }else{
+                completion(nil,"error")
+            }
+        }catch{
+            completion(nil, "error")
+        }
+    }
+    
+    task.resume()
 }
