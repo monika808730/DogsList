@@ -15,7 +15,9 @@ ListModel.swift - Reponse from API call is converted into the model and can be u
 Details Screen --
 
 DetailsVC.storyboard - UITableviewController is designed to display details about selected dog.
+
 DetailsVC.Swift - Details about the dog is displayed here by setting values to perticular Label.
+
 
 
 AppNetwrking.Swift - API Calling and getting response in this file.
