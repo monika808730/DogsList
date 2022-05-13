@@ -1,6 +1,10 @@
 This application displays the list of Dogs. When user selects any dog from the list then the detailed information of the dog will be displayed. User can filter the list based on the dog name and breed of the dog.
 
-![Simulator Screen Shot - iPhone 11 - 2022-05-12 at 15 01 11](https://user-images.githubusercontent.com/67224585/168093130-b0d59afe-ede8-4f9e-a6d2-a5049e234c34.png) ![Simulator Screen Shot - iPhone 11 - 2022-05-12 at 15 01 55](https://user-images.githubusercontent.com/67224585/168093270-53a53400-7d4f-441b-b86e-c1a21045866a.png)
+
+
+https://user-images.githubusercontent.com/67224585/168266143-ab324d7a-0a6c-4e0b-ab19-27f6769703fb.mov
+
+
 
 Listing Screen --
 
